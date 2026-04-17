@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIchat - Manipal University Jaipur</title>
+    <meta name="description" content="UNIchat is Manipal University Jaipur's AI chatbot. Get instant answers about admissions, academics, placements, hostel, and campus life.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Ambient Background -->
+        <div class="ambient-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-inner">
+                <div class="brand">
+                    <div class="brand-icon">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="12" fill="url(#grad)"/>
+                            <path d="M12 28V14l8 6 8-6v14" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="grad" x1="0" y1="0" x2="40" y2="40">
+                                    <stop stop-color="#F59E0B"/>
+                                    <stop offset="1" stop-color="#EF4444"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <h1>UNIchat</h1>
+                        <span class="brand-sub">Manipal University Jaipur</span>
+                    </div>
+                </div>
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Online</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-area" id="chatArea">
+            <!-- Welcome Screen -->
+            <div class="welcome" id="welcome">
+                <div class="welcome-icon">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="80" height="80" rx="24" fill="url(#wgrad)" opacity="0.15"/>
+                        <path d="M24 56V28l16 12 16-12v28" stroke="url(#wgrad2)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="wgrad" x1="0" y1="0" x2="80" y2="80">
+                                <stop stop-color="#F59E0B"/>
+                                <stop offset="1" stop-color="#EF4444"/>
+                            </linearGradient>
+                            <linearGradient id="wgrad2" x1="24" y1="28" x2="56" y2="56">
+                                <stop stop-color="#F59E0B"/>
+                                <stop offset="1" stop-color="#F97316"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h2>Hey there! I'm UNIchat</h2>
+                <p>Your go-to for everything MUJ. Ask me about admissions, placements, hostel life, academics, or anything else!</p>
+                <div class="suggestion-chips" id="suggestionChips">
+                    <button class="chip" data-query="What programs does MUJ offer?">
+                        <span class="chip-icon">📚</span> Programs offered
+                    </button>
+                    <button class="chip" data-query="How are placements at MUJ?">
+                        <span class="chip-icon">💼</span> Placement stats
+                    </button>
+                    <button class="chip" data-query="What are the hostel fees?">
+                        <span class="chip-icon">🏠</span> Hostel fees
+                    </button>
+                    <button class="chip" data-query="How do I apply to MUJ?">
+                        <span class="chip-icon">📝</span> How to apply
+                    </button>
+                    <button class="chip" data-query="Tell me about the CSE department">
+                        <span class="chip-icon">💻</span> CSE department
+                    </button>
+                    <button class="chip" data-query="What is student life like at MUJ?">
+                        <span class="chip-icon">🎉</span> Student life
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div class="messages" id="messages"></div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-avatar">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="10" fill="url(#tgrad)"/>
+                        <path d="M10 22V12l6 5 6-5v10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="tgrad" x1="0" y1="0" x2="32" y2="32">
+                                <stop stop-color="#F59E0B"/>
+                                <stop offset="1" stop-color="#EF4444"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="typing-dots">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="input-area">
+            <div class="input-container">
+                <textarea
+                    id="messageInput"
+                    placeholder="Ask me anything about MUJ..."
+                    rows="1"
+                    maxlength="500"
+                ></textarea>
+                <button class="send-btn" id="sendBtn" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13"/>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="input-hint">Powered by Clara RAG &bull; MUJ Knowledge Base</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
